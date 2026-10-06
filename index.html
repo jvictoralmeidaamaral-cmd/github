@@ -9,15 +9,17 @@
   <h2 id="texto">introdução a java</h2>
 </body>
 </html>
-<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Fuga sapiente atque minus culpa nostrum velit placeat, ducimus, enim illum nulla omnis. Unde aut voluptas veritatis iusto autem in deserunt similique.</p>
+<p id="Lorem">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Fuga sapiente atque minus culpa nostrum velit placeat, ducimus, enim illum nulla omnis. Unde aut voluptas veritatis iusto autem in deserunt similique.</p>
   <button onclick="document.write('aula de java')">mensagem</button>
     <button onclick="alert('FUDEU FOI TUDO')">mensagem diferente</button>
     <button onclick="print()">imprimir pág.</button>
-    <button onclick="document.getElementsByTagName('p')[0].innerHTML = '';">apagar texto</button>
+    <button onclick="document.getElementsByTagName('p')[1].innerHTML = '';">apagar texto</button>
   <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
+  <button onclick=" document.getElementById('Lorem').innerHTML = ''; "> apagar o lorem</button>
   <script>
     document.getElementsByTagName('h2') [0].innerHTML = document.getElementsByTagName('p') [1]
 .innerHTML;
-console.log(x);  </script>
+console.log(x);  
+</script>
 </body>
 </html>
