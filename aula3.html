@@ -23,13 +23,15 @@
 </main>
 <div>
   <p id="ex1">1 - Alterar o texto do " Menu 1" - para item 1.</p>
-   <p id="ex1">2 - Alterar o texto do " Menu 2" - para item 2 através da Tag.</p>
-   <p id="ex1">3 - inserir parenteses nos comandos da classe "comando".</p>
+   <p id="ex2">2 - Alterar o texto do " Menu 2" - para item 2 através da Tag.</p>
+   <p id="ex3">3 - inserir parenteses nos comandos da classe "comando".</p>
 </div>
 <script>
   document.getElementsByTagName('p') [0].innerHTML = "item 1";
   document.getElementsByTagName('p') [1].innerHTML = "item 2" ;
   document.getElementsByClassName('comandos') [0].innerHTML = document.getElementsByClassName('comandos') [0].innerHTML + '()' ;
+  document.getElementById ("ex1").style.color = "green";
+  document.getElementsByClassName('comandos')[1].style.color = "green";
 </script>
 </body>
 </html>
