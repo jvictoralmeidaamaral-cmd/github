@@ -29,21 +29,23 @@
    <p id="ex3">3 - inserir parenteses nos comandos da classe "comando".</p>
   <p id="ex4">4 - Alterar a cor do id "ex1", do segundo item da classe "comandos" para verde.</p>
    <p id="ex5">5 - colocar uma borda na div com o querySelector</p>
-  <p id="ex6">6 -Alterar o tamanho do texto do primeiro exercicio utilizando quarySelector </p>
+  <p id="ex6">6 - Alterar o tamanho do texto do primeiro exercicio utilizando quarySelector </p>
   <p id="ex7">7 - Alterar o texto para negrito no elemento da primeira classe comandos utilizando querySelector </p>
   <p id="ex8">8 - Alterar a div: arredondar as bordas, cor de fundo, cor do texto</p>
   <p id="ex9">9 - alterar ex1 e 2 para variaveis </p>
-  <p id="ex10">10 - </p>
+  <p id="ex10">10 - colocar os butoes para funcionar </p>
   </div>
 <script>
-  let item12 = document.getElementsByTagName('p')
+  let item12 = document.getElementsByTagName('p');
    item12[0].innerHTML = "item 1";
    item12[1].innerHTML = "item 2" ;
 
-   document.getElementsByClassName('comandos') [0].innerHTML = document.getElementsByClassName('comandos') [0].innerHTML + '()' ;
-  document.getElementById ("ex1").style.color = "green";
-  document.getElementsByClassName('comandos')[1].style.color = "green";
+   let comando =  document.getElementsByClassName('comandos');
+  comando[0].innerHTML = document.getElementsByClassName('comandos') [0].innerHTML + '()' ;
+  comando[1].style.color = "green";
   
+ document.getElementById ("ex1").style.color = "black";
+
   let div = document.querySelector('div').style;
   div.border = "3px solid lightgreen";
   div.fontSize = "20px";
