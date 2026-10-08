@@ -14,6 +14,8 @@
       <p>menu 3</p>
     </nav>
     </header>
+    <button>REMOVER DIV</button>
+    <button>RESTAURAR DIV</button>
  <main>
   <h2 id="titulo">Aula 3- Javascript DOM</h2>
  <p class="comandos">getElementById</p>
@@ -28,17 +30,27 @@
   <p id="ex4">4 - Alterar a cor do id "ex1", do segundo item da classe "comandos" para verde.</p>
    <p id="ex5">5 - colocar uma borda na div com o querySelector</p>
   <p id="ex6">6 -Alterar o tamanho do texto do primeiro exercicio utilizando quarySelector </p>
-  <p id="ex7">7 - alterar o texto para negrito no elemento da primeira classe comandos utilizando querySelector </p>
+  <p id="ex7">7 - Alterar o texto para negrito no elemento da primeira classe comandos utilizando querySelector </p>
+  <p id="ex8">8 - Alterar a div: arredondar as bordas, cor de fundo, cor do texto</p>
+  <p id="ex9">9 - alterar ex1 e 2 para variaveis </p>
+  <p id="ex10">10 - </p>
   </div>
 <script>
-  document.getElementsByTagName('p') [0].innerHTML = "item 1";
-  document.getElementsByTagName('p') [1].innerHTML = "item 2" ;
-  document.getElementsByClassName('comandos') [0].innerHTML = document.getElementsByClassName('comandos') [0].innerHTML + '()' ;
+  let item12 = document.getElementsByTagName('p')
+   item12[0].innerHTML = "item 1";
+   item12[1].innerHTML = "item 2" ;
+
+   document.getElementsByClassName('comandos') [0].innerHTML = document.getElementsByClassName('comandos') [0].innerHTML + '()' ;
   document.getElementById ("ex1").style.color = "green";
   document.getElementsByClassName('comandos')[1].style.color = "green";
-  document.querySelector('div').style.border = "3px solid green";
-  document.querySelector('#ex1').style.fontSize = "20px";
-  document.querySelector('.comandos').style.fontWeight = "bold";
+  
+  let div = document.querySelector('div').style;
+  div.border = "3px solid lightgreen";
+  div.fontSize = "20px";
+  div.fontWeight = "bold";
+  div.borderRadius = "15px";
+  div.backgroundColor = "darkGreen";
+  div.color = "white";
 </script>
 </body>
 </html>
