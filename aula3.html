@@ -36,6 +36,8 @@
   <p id="ex10">10 - colocar os butoes para funcionar </p>
   </div>
 <script>
+
+//1 a 9
   let item12 = document.getElementsByTagName('p');
    item12[0].innerHTML = "item 1";
    item12[1].innerHTML = "item 2" ;
@@ -53,6 +55,10 @@
   div.borderRadius = "15px";
   div.backgroundColor = "darkGreen";
   div.color = "white";
+  
+//10
+  document.querySelectorAll("button")[0].addEventListener("click", function() {
+    document.querySelectorAll("div")[0].style.display = "none"});
 </script>
 </body>
 </html>
