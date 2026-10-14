@@ -4,6 +4,18 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=>, initial-scale=1.0">
   <title>Document</title>
+  <style>
+    .contador p{
+      position: absolute;
+      top: 10px;
+      right: 10px;
+      background-color: lightgreen;
+      border: 1px solid;
+      font-size: 23px;
+      padding: 10px;
+
+    }
+  </style>
 </head>
 
 <body>
@@ -34,10 +46,15 @@
   <p id="ex8">8 - Alterar a div: arredondar as bordas, cor de fundo, cor do texto</p>
   <p id="ex9">9 - alterar ex1 e 2 para variaveis </p>
   <p id="ex10">10 - colocar os butoes para funcionar </p>
+  <p id="ex11">11 - inserir um evento para quando passar o mouse por cima: inserir uma borda e cor de fundo no "aula 3- JS DOM, e quando o mouse sair de cima; voltar ao original.<br></p>
+  <p id="ex12">12 - contador</p>
+  <div class="contador">
+    <p>0</p>
+  </div>
   </div>
 <script>
 
-//1 a 9
+//exercicio 1 a 9
   let item12 = document.getElementsByTagName('p');
    item12[0].innerHTML = "item 1";
    item12[1].innerHTML = "item 2" ;
@@ -56,9 +73,38 @@
   div.backgroundColor = "darkGreen";
   div.color = "white";
   
-//10
-  document.querySelectorAll("button")[0].addEventListener("click", function() {
+//exercicio 10
+const botao = document.querySelectorAll("button");
+  //botao 1
+  botao[0].addEventListener("click", function() {
     document.querySelectorAll("div")[0].style.display = "none"});
+ 
+  //botao 2
+    botao[1].addEventListener("click", function() {
+    document.querySelectorAll("div")[0].style.display = "block"});
+
+//exercicio 11
+const mouse =  document.getElementById('titulo');
+
+//apareceu
+ mouse.addEventListener('mouseover', function() {
+  mouse.style.border = '3px solid green';
+  mouse.style.backgroundColor = 'lightgreen';
+ });
+
+ //sumiu
+ mouse.addEventListener('mouseout', function() {
+  mouse.style.border = 'none';
+  mouse.style.backgroundColor = 'white';
+ });
+
+//12
+let contador = document.querySelectorAll(".contador")[1].innerHTML;
+contador++;
+document.querySelectorAll(".contador")[1].innerHTML = contador;
+
+
+
 </script>
 </body>
 </html>
