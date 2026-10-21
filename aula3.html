@@ -4,17 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=>, initial-scale=1.0">
   <title>Document</title>
-  <style>
-    .contador p{
-      position: absolute;
-      top: 10px;
-      right: 10px;
-      background-color: lightgreen;
-      border: 1px solid;
-      font-size: 23px;
-      padding: 10px;
-
-    }
+ 
   </style>
 </head>
 
@@ -28,6 +18,13 @@
     </header>
     <button>REMOVER DIV</button>
     <button>RESTAURAR DIV</button>
+
+    <img src="https://nerdarretado.com.br/wp-content/uploads/2026/09/proxy-1024x577.jpeg" width="200px">
+    <br>
+    <button id="btnAumentar"> + IMG </button>
+    <button id="btnDiminuir"> - IMG </button>
+    <br>
+    <h3>Tamanho: <span id="tam">200px</span> </h3>
  <main>
   <h2 id="titulo">Aula 3- Javascript DOM</h2>
  <p class="comandos">getElementById</p>
@@ -47,10 +44,7 @@
   <p id="ex9">9 - alterar ex1 e 2 para variaveis </p>
   <p id="ex10">10 - colocar os butoes para funcionar </p>
   <p id="ex11">11 - inserir um evento para quando passar o mouse por cima: inserir uma borda e cor de fundo no "aula 3- JS DOM, e quando o mouse sair de cima; voltar ao original.<br></p>
-  <p id="ex12">12 - contador</p>
-  <div class="contador">
-    <p>0</p>
-  </div>
+  <p id="ex12">12 - Ampliar e reduzir uma imagem: inserir uma img de tamanho maximo de 800px e minimo de 200px, fazer um botao p/ ampliar e reduzir a img de 30 em 30 px <br> exiba, abaixo da img um texto h3 com a inf do tamanho atual da img </p>
   </div>
 <script>
 
@@ -99,9 +93,29 @@ const mouse =  document.getElementById('titulo');
  });
 
 //12
-let contador = document.querySelectorAll(".contador")[1].innerHTML;
-contador++;
-document.querySelectorAll(".contador")[1].innerHTML = contador;
+ let foto = document.getElementsByTagName("img")[0]; 
+ let btnAumentar = document.getElementById("btnAumentar");
+ let btnDiminuir = document.getElementById("btnDiminuir"); 
+ btnAumentar.addEventListener("click", function(){
+  if(foto.width <= 770)
+  foto.width = foto.width + 30;
+tam.innerHTML = foto.width;
+})
+
+btnDiminuir.addEventListener("click", function(){
+  if(foto.width <= 230)
+  foto.width = foto.width - 30;
+tam.innerHTML = foto.width;
+})
+
+let btnRedefinir = document.createElement('button');
+btnRedefinir.textContent = "redefinir "; 
+document.body.appendChild(btnRedefinir); 
+btnRedefinir.addEventListener("click", function(){
+  foto.width = 200; 
+  tam.innerHTML = foto.width;
+})
+
 
 
 
