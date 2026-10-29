@@ -9,6 +9,7 @@
 </head>
 
 <body>
+
   <header>
     <nav>
       <p>menu 1</p>
@@ -16,8 +17,8 @@
       <p>menu 3</p>
     </nav>
     </header>
-    <button>REMOVER DIV</button>
-    <button>RESTAURAR DIV</button>
+      <button id="remove">REMOVER DIV</button>
+      <button id="restore">RESTAURAR DIV </button>
 
     <img src="https://nerdarretado.com.br/wp-content/uploads/2026/09/proxy-1024x577.jpeg" width="200px">
     <br>
@@ -32,22 +33,24 @@
   <p class="comandos">getElementByClassName</p>
   <p>comandos para pegar elementos.</p>
 </main>
-<div>
-  <p id="ex1">1 - Alterar o texto do " Menu 1" - para item 1.</p>
-   <p id="ex2">2 - Alterar o texto do " Menu 2" - para item 2 através da Tag.</p>
-   <p id="ex3">3 - inserir parenteses nos comandos da classe "comando".</p>
-  <p id="ex4">4 - Alterar a cor do id "ex1", do segundo item da classe "comandos" para verde.</p>
-   <p id="ex5">5 - colocar uma borda na div com o querySelector</p>
-  <p id="ex6">6 - Alterar o tamanho do texto do primeiro exercicio utilizando quarySelector </p>
-  <p id="ex7">7 - Alterar o texto para negrito no elemento da primeira classe comandos utilizando querySelector </p>
-  <p id="ex8">8 - Alterar a div: arredondar as bordas, cor de fundo, cor do texto</p>
-  <p id="ex9">9 - alterar ex1 e 2 para variaveis </p>
-  <p id="ex10">10 - colocar os butoes para funcionar </p>
-  <p id="ex11">11 - inserir um evento para quando passar o mouse por cima: inserir uma borda e cor de fundo no "aula 3- JS DOM, e quando o mouse sair de cima; voltar ao original.<br></p>
-  <p id="ex12">12 - Ampliar e reduzir uma imagem: inserir uma img de tamanho maximo de 800px e minimo de 200px, fazer um botao p/ ampliar e reduzir a img de 30 em 30 px <br> exiba, abaixo da img um texto h3 com a inf do tamanho atual da img </p>
+<div id="exercicios">
+  <p id="ex1"> 1 - Alterar o texto do " Menu 1" - para item 1.</p>
+   <p id="ex2"> 2 - Alterar o texto do " Menu 2" - para item 2 através da Tag.</p>
+   <p id="ex3"> 3 - inserir parenteses nos comandos da classe "comando".</p>
+  <p id="ex4"> 4 - Alterar a cor do id "ex1", do segundo item da classe "comandos" para verde.</p>
+   <p id="ex5"> 5 - colocar uma borda na div com o querySelector</p>
+  <p id="ex6"> 6 - Alterar o tamanho do texto do primeiro exercicio utilizando quarySelector </p>
+  <p id="ex7"> 7 - Alterar o texto para negrito no elemento da primeira classe comandos utilizando querySelector </p>
+  <p id="ex8"> 8 - Alterar a div: arredondar as bordas, cor de fundo, cor do texto</p>
+  <p id="ex9"> 9 - alterar ex1 e 2 para variaveis </p>
+  <p id="ex10"> 10 - colocar os butoes para funcionar </p>
+  <p id="ex11"> 11 - inserir um evento para quando passar o mouse por cima: inserir uma borda e cor de fundo no "aula 3- JS DOM, e quando o mouse sair de cima; voltar ao original.<br></p>
+  <p id="ex12"> 12 - Ampliar e reduzir uma imagem: inserir uma img de tamanho maximo de 800px e minimo de 200px, fazer um botao p/ ampliar e reduzir a img de 30 em 30 px <br> exiba, abaixo da img um texto h3 com a inf do tamanho atual da img </p>
+  <p id="ex13"> 13 - cadastro de contatos "tipo agenda" </p>
   </div>
 <script>
 
+ 
 //exercicio 1 a 9
   let item12 = document.getElementsByTagName('p');
    item12[0].innerHTML = "item 1";
@@ -68,14 +71,15 @@
   div.color = "white";
   
 //exercicio 10
-const botao = document.querySelectorAll("button");
+const botao = document.getElementById("remove");
   //botao 1
-  botao[0].addEventListener("click", function() {
-    document.querySelectorAll("div")[0].style.display = "none"});
+  botao.addEventListener("click", function() {
+    document.getElementById("exercicios").style.display = "none"});
  
   //botao 2
-    botao[1].addEventListener("click", function() {
-    document.querySelectorAll("div")[0].style.display = "block"});
+  const botaoRS = document.getElementById("restore");
+    botaoRS.addEventListener("click", function(){
+    document.getElementById("exercicios").style.display = "block"});
 
 //exercicio 11
 const mouse =  document.getElementById('titulo');
@@ -92,7 +96,7 @@ const mouse =  document.getElementById('titulo');
   mouse.style.backgroundColor = 'white';
  });
 
-//12
+//ex 12
  let foto = document.getElementsByTagName("img")[0]; 
  let btnAumentar = document.getElementById("btnAumentar");
  let btnDiminuir = document.getElementById("btnDiminuir"); 
@@ -115,9 +119,6 @@ btnRedefinir.addEventListener("click", function(){
   foto.width = 200; 
   tam.innerHTML = foto.width;
 })
-
-
-
 
 </script>
 </body>
