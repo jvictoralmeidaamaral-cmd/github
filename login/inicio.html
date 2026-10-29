@@ -3,9 +3,20 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Document</title>
+  <title>Inicio</title>
 </head>
 <body>
+  <h1 id="mensagem"></h1>
+  <a href="perfil.html">ir ao perfil</a>
   
+  <script>
+let usuario = localStorage.getItem('usuario');
+if (usuario === ""){
+  window.location.href = "login.html";
+
+} else{
+  document.getElementById("mensagem").textContent = "Bem-vindo, " + usuario + "!";
+}
+  </script>
 </body>
 </html>
