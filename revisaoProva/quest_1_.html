@@ -1,0 +1,52 @@
+<!-- Crie uma página HTML com um número inicialmente igual a zero e três botões: Incrementar, Decrementar e -->
+<!-- Zerar. -->
+<!-- O programa deverá: -->
+<!-- Incrementar o número ao clicar no primeiro botão. -->
+<!-- Decrementar o número ao clicar no segundo botão. -->
+<!-- Voltar para zero ao clicar no terceiro botão. -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <p></p>
+  <button id="btnAumentar" onclick="incrementar()">INCREMENTAR</button>
+  <button id="btnDecrementar" onclick="decrementar()">DECREMENTAR</button>
+  <button id="btnZerar" onclick="zerar()">ZERAR</button>
+
+</body>
+<script>
+  let cont= 0
+  const p = document.querySelector('p');
+  const btnAumentar = document.getElementById (btnAumentar);
+  const btnDiminuir = document.getElementById (btnDiminuir);
+  const btnZerar = document.getElementById(btnZerar);
+  p.textcontent="0"
+  function incrementar(){
+    cont += 1;
+    p.textContent = cont;
+  }
+  function decrementar(){
+    if(cont!==0){
+    cont -=1;
+  p.textcontent=cont;
+  }else{
+    window.alert('ta usando negativo')
+    }
+  }
+  function zerar(){
+    if(cont!==0){
+      cont = 0;
+      p.textcontent = cont;
+    }else{
+      window.alert("o valor ja ta zero burro!!")
+    }
+  }
+
+
+</script>
+</html>
