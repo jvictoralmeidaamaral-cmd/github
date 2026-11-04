@@ -1,0 +1,29 @@
+<!-- Crie uma página com um título, um parágrafo e um botão. -->
+<!-- Ao clicar no botão: -->
+<!-- Altere o texto do título. -->
+<!-- Altere o conteúdo do parágrafo. -->
+<!-- Modifique o texto do próprio botão. -->
+ <!DOCTYPE html>
+ <html lang="en">
+ <head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=>, initial-scale=1.0">
+  <title>Document</title>
+ </head>
+ <body>
+  <h1>TITULO</h1>
+  <p>p de paragrafo</p>
+  <button id="btnAlterar" onclick="alterar()">Alterar</button>
+  
+  <script>
+  function alterar(){
+     const paragraf = document.querySelector("p");
+    const btnAlterar = document.getElementById("btnAlterar");
+    const TITULO = document.querySelector("h1");
+    TITULO.textContent ="Mundança";
+    paragraf.textContent = "mudança";
+    btnAlterar.textContent="mudança";
+  }
+  </script>
+ </body>
+ </html>
