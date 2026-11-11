@@ -2,16 +2,32 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=>, initial-scale=1.0">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Document</title>
 </head>
 <body>
-  <p>Digite idade:</p>
-  <input type="text">
-  <button id="btnLer">Leitura</button>
-  
+  <h1>Verificador de idade</h1>
+
+  <input type="number" id="idade" placeholder="insira sua idade:">
+
+  <button onclick="verificar()">verificar</button>
+
+  <p id="resultado"></p>
+
   <script>
-let 
+    function verificar(){
+      let idade = document.getElementById("idade").value;
+
+      if (idade === ""){
+         window.alert ("Por favor, preencha a idade.") ;
+      } 
+      else if(idade >= 18){
+        document.getElementById('resultado').innerHTML = "você é maior de idade!"
+      } else {
+                document.getElementById("resultado").innerHTML =
+                    "Você é menor de idade!";
+            }
+    }
   </script>
 </body>
-</html>
+</html> 

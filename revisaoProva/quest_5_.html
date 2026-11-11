@@ -1,0 +1,48 @@
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>ex5</title>
+  </head>
+  <body>
+    <h1>Lista de compras</h1>
+    <input type="text" id="produto" placeholder="digite um produto:">
+    <button onclick="adicionar()">ADICIONAR</button>
+    <div id="lista">
+
+    </div>
+    <script>
+      function adicionar() {
+
+    let produto = document.getElementById("produto").value;
+
+    let item = document.createElement("p");
+
+    item.innerHTML = produto;
+
+    let comprado = document.createElement("button");
+    comprado.innerHTML = "Comprado";
+
+    comprado.onclick = function() {
+        item.style.textDecoration = "line-through";
+        item.style.color = "green";
+    };
+
+    item.appendChild(comprado);
+
+    let excluir = document.createElement("button");
+    excluir.innerHTML = "Excluir";
+
+    excluir.onclick = function() {
+        item.remove();
+    };
+
+    item.appendChild(excluir);
+
+    document.getElementById("lista").appendChild(item);
+
+    document.getElementById("produto").value = "";
+
+}
+    </script>
+  </body>
+</html>
