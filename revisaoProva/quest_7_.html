@@ -1,0 +1,95 @@
+
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <title>Controle de Notas</title>
+</head>
+<body>
+
+    <h1>Controle de Notas</h1>
+
+    <input type="text" id="aluno" placeholder="Nome do aluno">
+    <input type="number" id="nota" placeholder="Nota" min="0" max="10" step="0.1">
+
+    <button onclick="cadastrar()">Cadastrar</button>
+
+    <h2>Alunos cadastrados</h2>
+    <ul id="lista"></ul>
+
+    <h3 id="media">Média: 0</h3>
+
+    <script>
+        let notas = [];
+
+        function cadastrar() {
+            let nome = document.getElementById("aluno").value;
+            let nota = document.getElementById("nota").value;
+
+            if (nome === "" || nota === "") {
+                alert("Preencha todos os campos!");
+                return;
+            }
+
+            nota = Number(nota);
+
+            if (nota < 0 || nota > 10) {
+                alert("A nota deve estar entre 0 e 10!");
+                return;
+            }
+
+            let situacao = nota >= 6 ? "Aprovado" : "Reprovado";
+
+            let aluno = {
+                nome: nome,
+                nota: nota
+            };
+
+            notas.push(aluno);
+
+            atualizarLista();
+
+            document.getElementById("aluno").value = "";
+            document.getElementById("nota").value = "";
+        }
+
+        function atualizarLista() {
+            let lista = document.getElementById("lista");
+            lista.innerHTML = "";
+
+            notas.forEach(function(aluno, indice) {
+                let item = document.createElement("li");
+
+                let situacao = aluno.nota >= 6 ? "Aprovado" : "Reprovado";
+
+                item.textContent =
+                    aluno.nome + " - Nota: " + aluno.nota +
+                    " - " + situacao + " ";
+
+                let botao = document.createElement("button");
+                botao.textContent = "Excluir";
+
+                botao.onclick = function() {
+                    notas.splice(indice, 1);
+                    atualizarLista();
+                };
+
+                item.appendChild(botao);
+                lista.appendChild(item);
+            });
+
+            let soma = 0;
+
+            notas.forEach(function(aluno) {
+                soma += aluno.nota;
+            });
+
+            let media = notas.length > 0 ? soma / notas.length : 0;
+
+            document.getElementById("media").textContent =
+                "Média: " + media.toFixed(2);
+        }
+    </script>
+
+</body>
+</html>
