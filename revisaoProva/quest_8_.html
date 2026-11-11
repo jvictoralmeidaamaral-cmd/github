@@ -1,0 +1,47 @@
+
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <title>Galeria de Imagens</title>
+</head>
+<body>
+
+    <h1>Minha Galeria de Imagens</h1>
+
+    <button onclick="mostrarImagem(1)">Imagem 1</button>
+    <button onclick="mostrarImagem(2)">Imagem 2</button>
+    <button onclick="mostrarImagem(3)">Imagem 3</button>
+
+    <h2 id="nome">Selecione uma imagem</h2>
+
+    <div>
+        <img id="imagem" src=""
+             width="400" alt="Imagem selecionada">
+    </div>
+
+    <script>
+        function mostrarImagem(numero) {
+            let imagem = document.getElementById("imagem");
+            let nome = document.getElementById("nome");
+
+            if (numero === 1) {
+                imagem.src = "https://picsum.photos/id/10/600/400";
+                nome.textContent = "Imagem 1 - Natureza";
+            }
+
+            else if (numero === 2) {
+                imagem.src = "https://picsum.photos/id/20/600/400";
+                nome.textContent = "Imagem 2 - Floresta";
+            }
+
+            else if (numero === 3) {
+                imagem.src = "https://picsum.photos/id/30/600/400";
+                nome.textContent = "Imagem 3 - Paisagem";
+            }
+        }
+    </script>
+
+</body>
+</html>
+
